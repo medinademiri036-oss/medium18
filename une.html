@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS 3D Transforms and Transitions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #141e30, #243b55);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Creates the 3D perspective */
+        .container {
+            perspective: 1000px;
+        }
+
+        /* Main card */
+        .card {
+            width: 250px;
+            height: 300px;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            color: white;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+
+            /* Smooth animation */
+            transition: transform 0.8s ease,
+                        box-shadow 0.8s ease;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+            transform-style: preserve-3d;
+        }
+
+        /* 3D hover effect */
+        .card:hover {
+            transform: rotateY(25deg) rotateX(15deg)
+                       scale(1.1);
+
+            box-shadow: 20px 20px 40px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>3D CSS Card</h1>
+
+            <p>
+                Hover over this card to see
+                an amazing 3D transformation!
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
